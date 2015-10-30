@@ -166,7 +166,7 @@ export default sweetAlert = swal = function() {
       }
     }, 0);
   };
-  
+
   // Show alert with enabled buttons always
   swal.enableButtons();
 };
@@ -258,7 +258,9 @@ sweetAlert.showInputError = swal.showInputError = function(errorMessage) {
     sweetAlert.enableButtons();
   }, 1);
 
-  modal.querySelector('input').focus();
+  if (modal.getAttribute('data-input-focus') !== 'false') {
+    modal.querySelector('input').focus();
+  }
 };
 
 
